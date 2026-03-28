@@ -1,0 +1,11 @@
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- CUDA/ROCm Java bindings -->
+    <dependency>
+        <groupId>org.bytedeco</groupId>
+        <artifactId>javacpp-platform</artifactId>
+    </dependency>
+</dependencies>
