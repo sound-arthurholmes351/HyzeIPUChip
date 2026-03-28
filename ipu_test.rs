@@ -177,3 +177,16 @@ for _ in 0..1000 {
 }
 let metrics = manager.monitor().await;
 assert_eq!(metrics.values().filter(|m| m.load < 0.9).count(), 64);
+
+// TEST 11: Antivirus
+let av_resp: serde_json::Value = reqwest::post(format!("{}/antivirus_scan_v2", args.api_url))
+    .json(&serde_json::json!({"file": "eicar_test.com"}))
+    .send().await?.json().await?;
+
+let threat_detected = av_resp["threat"].as_bool().unwrap_or(false);
+if threat_detected {
+    println!("✅ [11/11] Antivirus: Threat detected");
+    passed += 1;
+} else {
+    bugs.push("hyze_antivirus_npu_v2.sv:signature miss".to_string());
+}
