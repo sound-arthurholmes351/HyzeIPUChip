@@ -1,0 +1,6 @@
+name = "hyze-serverless-ipu"
+main = "build/hyze_serverless_edge_bg.wasm"
+compatibility_date = "2026-03-28"
+
+[vars]
+IPU_PCI_ADDR = "pci:10ee:7021"
