@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: hyze-ipu-dp-v2
+spec:
+  rules:
+  - to:
+    - operation:
+        paths: ["/secure/dp_inference_v2"]
+    when:
+    - key: request.auth.claims[compliance]
+      values: ["HIPAAv2", "PCIDSSv2"]
