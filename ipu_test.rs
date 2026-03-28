@@ -170,3 +170,10 @@ async fn main() -> Result<()> {
         std::process::exit(0);
     }
 }
+// TEST 10: Task Manager Load Balancing
+let manager = HyzeTaskManager::new(64);
+for _ in 0..1000 {
+    manager.schedule(HyzeTask::Inference {..}).await.unwrap();
+}
+let metrics = manager.monitor().await;
+assert_eq!(metrics.values().filter(|m| m.load < 0.9).count(), 64);
