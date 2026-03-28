@@ -1,0 +1,7 @@
+type SecureQuery {
+  confidentialInfer(@auth(rule: "{user.clearance: { _gte: \"TOP_SECRET\" }}")): EncryptedPrediction!
+}
+
+extend type Mutation {
+  secureTrain(@auth(rule: "{user.tenant: { _eq: context.tenant }}")): SecureMetrics!
+}
