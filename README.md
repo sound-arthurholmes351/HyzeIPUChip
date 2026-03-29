@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <img src="https://i.imgur.com/SVYQoHL.png" alt="Hyze Logo" width="255">
 </p>
 
