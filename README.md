@@ -1,6 +1,10 @@
-# 🚀 Hyze MegaChip: Heterogeneous AI Superchip
+<p align="center">
+  <img src="https://i.imgur.com/3TQgMBb.png" alt="Hyze Logo" width="200">
+</p>
 
-**Hyze MegaChip** is a cutting-edge, heterogeneous AI acceleration platform that integrates **CPU, GPU, and a custom IPU (Intelligence Processing Unit)** into a unified architecture. Designed for ultra-low latency inference, massive context windows, and hardware-enforced security, Hyze MegaChip targets the next generation of enterprise AI workloads.
+# 🚀 Hyze IPU: Heterogeneous AI Superchip
+
+**Hyze IPU** is a cutting-edge, heterogeneous AI acceleration platform that integrates **CPU, GPU, and a custom IPU (Intelligence Processing Unit)** into a unified architecture. Designed for ultra-low latency inference, massive context windows, and hardware-enforced security, Hyze IPU targets the next generation of enterprise AI workloads.
 
 ---
 
@@ -98,7 +102,7 @@ cargo build --release
 
 ## 🛡️ Security & Compliance
 
-Hyze MegaChip is built with a **Security-First** philosophy:
+Hyze IPU is built with a **Security-First** philosophy:
 - **Hardware Prompt Guard**: Blocks malicious prompts (jailbreaks, PII leaks) at the gate-level with zero software overhead.
 - **Confidential Enclaves**: TEE-based execution for sensitive model weights and user data.
 - **SBOM Enforcer**: Real-time verification of software components to prevent supply-chain attacks.
