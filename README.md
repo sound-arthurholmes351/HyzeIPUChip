@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/SVYQoHL.png" alt="Hyze Logo" width="270">
+  <img src="https://i.imgur.com/SVYQoHL.png" alt="Hyze Logo" width="250">
 </p>
 
 # 🚀 Hyze IPU: Heterogeneous AI Superchip
