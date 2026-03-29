@@ -1,0 +1,81 @@
+# Hyze IPU Carrier v1.0 - Hitesh Vinothkumar 2026
+# Tang Primer 25K + DDR3 + PCIe
+
+(kicad_sch (version 20231120) (generator eeschema)
+
+  (uuid 8f4e2a1b-3c4d-4e5f-8901-23456789abcd)
+
+  (paper "A4")
+
+  (lib_symbols
+    (symbol "Connector" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 -2.54 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Value" "B2B_60pin" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Footprint" "Connector_B2B:SiPeed_Tang_Primer_25K" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 5.08 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "J1"
+        (polyline
+          (pts
+            (xy -5.08 7.62)
+            (xy 5.08 7.62)
+            (xy 5.08 -7.62)
+            (xy -5.08 -7.62)
+            (xy -5.08 7.62)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+        (pin passive line both (at -7.62 0 180) (length 2.54)
+          (name "~" (effects (font (size 1.27 1.27))))
+          (number 1 (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    # ... (60 more pins)
+  )
+
+  # Tang Primer 25K Connector (J1, J2)
+  (symbol (lib_id "Connector:B2B_60pin") (at 50 50 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (reference "J1") (value "Tang_Primer_J1") (footprint "Connector_B2B:SiPeed_Tang25K_J1")
+  )
+  (symbol (lib_id "Connector:B2B_60pin") (at 64 50 0) (unit 1)
+    (reference "J2") (value "Tang_Primer_J2") (footprint "Connector_B2B:SiPeed_Tang25K_J2")
+  )
+
+  # DDR3 Memory (U5)
+  (symbol (lib_id "Memory:MT48LC16M16") (at 80 40 0)
+    (reference "U5") (value "MT48LC16M16A2-6A") (footprint "Package_SO:TSSOP-86_W10.5mm_P0.65mm")
+  )
+
+  # Power Regulators
+  (symbol (lib_id "Regulator_Linear:AMS1117-1.0") (at 20 20 0)
+    (reference "U3") (value "AMS1117-1.0")
+  )
+  (symbol (lib_id "Regulator_Linear:AMS1117-3.3") (at 20 35 0)
+    (reference "U4") (value "AMS1117-3.3")
+  )
+
+  # PCIe Slot
+  (symbol (lib_id "Connector:PCIe_x16") (at 10 60 90)
+    (reference "J3") (value "PCIe_x16")
+  )
+
+  # USB-C, Ethernet, Status LEDs
+  (symbol (lib_id "Connector:USB_C_Receptacle") (at 90 70 0)
+    (reference "J4")
+  )
+  (symbol (lib_id "Connector:RJ45") (at 90 85 0)
+    (reference "J5")
+  )
+  (symbol (lib_id "LED:LED_0805") (at 95 20 0) (reference "LED1") (value "Power")
+  (symbol (lib_id "LED:LED_0805") (at 95 25 0) (reference "LED2") (value "IPU")
+)
